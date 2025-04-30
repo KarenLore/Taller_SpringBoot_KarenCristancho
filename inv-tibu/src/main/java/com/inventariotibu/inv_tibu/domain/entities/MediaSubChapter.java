@@ -13,16 +13,19 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@Table(name = "citie")
+@Table(name = "public_media_sub_chapters")
 @Entity
-public class cities {
+public class MediaSubChapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     int id;
 
-    @Column(name = "city_id", nullable = false)
-    int cityId;
+    @Column(name = "media_id", nullable = false)
+    int mediaId;
+
+    @Column(name = "subchapter_id", nullable = false)
+    int subchapterId;
 
     @Column(name = "created_at", nullable = false)
     LocalDateTime createdAt;
@@ -30,9 +33,9 @@ public class cities {
     @Column(name = "updated_at", nullable = false)
     LocalDateTime updatedAt;
 
-    @Column(name = "description_school", length = 50, nullable = false)
-    String descriptionSchool;
+    @Column(name = "description", length = 30, nullable = false)
+    String description;
 
-    @Column(name = "email_school", length = 80, nullable = false)
-    String emailSchool;
+    @Column(name = "title", columnDefinition = "TEXT", nullable = false)
+    String title;
 }

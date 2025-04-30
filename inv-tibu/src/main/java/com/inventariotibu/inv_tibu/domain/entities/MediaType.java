@@ -11,14 +11,17 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@Table(name = "public_operations")
+@Table(name = "public_media_types")
 @Entity
-public class operation {
+public class MediaType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "operation_name", nullable = false)
-    private String operationName;
+    @Column(name = "description", length = 80, nullable = false)
+    private String description;
+
+    @Column(name = "tag_option", length = 80, nullable = false)
+    private String tagOption;
 }
